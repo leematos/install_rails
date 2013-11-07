@@ -12,16 +12,6 @@ GIT
     bootstrap-sass (3.0.0.0)
       sass (~> 3.2)
 
-GIT
-  remote: https://github.com/mongoid/mongoid.git
-  revision: 5d8397e24b673724f4b70ca2923a62bfe20e6e79
-  specs:
-    mongoid (4.0.0)
-      activemodel (~> 4.0.0)
-      moped (~> 1.5)
-      origin (~> 1.0)
-      tzinfo (~> 0.3.22)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -138,12 +128,11 @@ GEM
     mime-types (1.23)
     mini_portile (0.5.2)
     minitest (4.7.5)
-    moped (1.5.0)
     multi_json (1.7.7)
     multi_test (0.0.2)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
-    origin (1.1.0)
+    pg (0.17.0)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -258,7 +247,7 @@ DEPENDENCIES
   guard-spork (= 1.5.0)
   jbuilder (~> 1.2)
   jquery-rails
-  mongoid!
+  pg (= 0.17.0)
   rails (= 4.0.0)
   rails_12factor
   rspec-rails (= 2.13.1)

@@ -20,10 +20,10 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem 'wicked'
 gem 'unicorn'
 gem 'figaro'
+gem 'pg', '0.17.0'
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'

@@ -1,0 +1,16 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: install_rails_development
+  pool: 5
+  host: localhost
+
+test: &test
+  adapter: postgresql
+  encoding: unicode
+  database: install_rails_test
+  pool: 5
+  host: localhost
+
+cucumber:
+  <<: *test
