@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131107160202) do
+ActiveRecord::Schema.define(version: 20131107160613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "edges", force: true do |t|
+    t.integer  "predecessor_id"
+    t.integer  "successor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "edges", ["predecessor_id"], name: "index_edges_on_predecessor_id", using: :btree
+  add_index "edges", ["successor_id"], name: "index_edges_on_successor_id", using: :btree
 
   create_table "steps", force: true do |t|
     t.string "title"
