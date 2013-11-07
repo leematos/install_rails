@@ -1,3 +1,5 @@
+<%= content_for :body_class, "directed-graph-editor" %>
+
 <h1>Listing steps</h1>
 
 <table>
@@ -29,3 +31,5 @@
 <br>
 
 <%= link_to 'New Step', new_step_path %>
+
+<%= javascript_include_tag "directed-graph-editor" %>
