@@ -24,6 +24,7 @@ gem 'wicked'
 gem 'unicorn'
 gem 'figaro'
 gem 'pg', '0.17.0'
+gem 'mercury-rails', github: 'jejacks0n/mercury'
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'

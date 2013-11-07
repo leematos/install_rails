@@ -5,6 +5,14 @@ GIT
     database_cleaner (1.2.0)
 
 GIT
+  remote: git://github.com/jejacks0n/mercury.git
+  revision: 5f178716a42031f5117a6bbc3a6ea9254c6ff6f5
+  specs:
+    mercury-rails (0.9.0)
+      coffee-rails (>= 3.2.2)
+      railties (>= 3.0)
+
+GIT
   remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
   revision: f4294bfd0218a181a3c288dba7cb9811a99b9f83
   branch: 3
@@ -247,6 +255,7 @@ DEPENDENCIES
   guard-spork (= 1.5.0)
   jbuilder (~> 1.2)
   jquery-rails
+  mercury-rails!
   pg (= 0.17.0)
   rails (= 4.0.0)
   rails_12factor

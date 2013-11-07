@@ -14,7 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require_tree .
+//= require confetti
+//= require install_steps
+//= require segment_io
 
 //if we are using the #confetti id, run the confetti
 confetti = document.getElementById("confetti");

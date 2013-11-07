@@ -1,6 +1,9 @@
 InstallRails::Application.routes.draw do
 
-  resources :steps
+  mount Mercury::Engine => '/'
+  resources :steps do
+    member { put :mercury_update }
+  end
 
   resources :sessions, only: :destroy
   resources :install_steps, path: 'steps'

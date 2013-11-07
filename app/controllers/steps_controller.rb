@@ -61,6 +61,15 @@ class StepsController < ApplicationController
     end
   end
 
+  def mercury_update
+    step = Step.find_by(permalink: params[:id])
+    step.title = params[:content][:step_title][:value]
+    step.styles = params[:content][:step_styles][:value]
+    step.content = params[:content][:step_content][:value]
+    step.save!
+    render text: ""
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_step

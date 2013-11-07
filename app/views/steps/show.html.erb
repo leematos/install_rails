@@ -1,3 +1,10 @@
 <p id="notice"><%= notice %></p>
+<style type="text/css" id="step_styles" class="mercury-region" data-type="editable" data-mercury="full"><%= raw @step.styles %></style>
 
-<%= raw @step.content %>
+<h1><span id="step_title" class="mercury-region" data-type="editable" data-mercury="full"><%= @step.title %></span></h1>
+<div id="step_styles" class="mercury-region" data-type="editable" data-mercury="full"><%= @step.styles %></div>
+<div id="step_content" class="mercury-region" data-type="editable" data-mercury="full">
+  <%= raw @step.content %>
+</div>
+
+<%= link_to "Edit Page", "/editor" + request.path, class: "btn btn-large btn-primary", id: "edit_link", data: {save_url: mercury_update_step_path(@step)} %>
