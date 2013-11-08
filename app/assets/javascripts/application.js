@@ -18,6 +18,7 @@
 //= require install_steps
 //= require segment_io
 //= require d3
+//= require steps
 
 //if we are using the #confetti id, run the confetti
 confetti = document.getElementById("confetti");

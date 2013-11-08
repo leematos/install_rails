@@ -4,12 +4,18 @@ class StepsController < ApplicationController
   # GET /steps
   # GET /steps.json
   def index
-    @steps = Step.all
+    @steps = Step.all.includes(:edges)
+    respond_to do |format|
+      format.html
+      format.json { render json: @steps }
+    end
   end
 
-  # GET /steps/1
-  # GET /steps/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json { render json: @step }
+    end
   end
 
   # GET /steps/new
