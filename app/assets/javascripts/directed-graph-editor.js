@@ -8,61 +8,6 @@ var svg = d3.select('#steps')
   .attr('width', width)
   .attr('height', height);
 
-// set up initial nodes and links
-//  - nodes are known by 'id', not by index in array.
-//  - reflexive edges are indicated on the node (as a bold black circle).
-//  - links are always source < target; edge directions are set by 'left' and 'right'.
-
-function getStepData() {
-  var that = this;
-  console.log("sending request for step json data");
-
-  var dataset = null;
-  $.ajax({
-    url: '/steps.json',
-    dataType: 'json',
-    data: 'GET',
-    async: false,
-    success: function(data) {
-      console.log("step data received:");
-      console.log(data);
-      dataset = prepDataForD3(data);
-    }
-  });
-  return dataset;
-}
-
-function prepDataForD3(data) {
-  var steps = data.steps,
-    dataset = {
-      nodes: [],
-      lastNodeId: null,
-      links: []
-    };
-
-  console.log("Preparing nodes");
-  for (var i = 0; i < steps.length; i++) {
-    dataset.nodes.push({id: steps[i].id});
-    lastNodeId = i;
-  };
-
-  console.log("Preparing links");
-  $.each(dataset.nodes, function( index, value ) {
-    console.log(value);
-  });
-
-  return dataset;
-}
-
-var data = getStepData();
-var nodes = data.nodes;
-var lastNodeId = data.lastNodeId;
-// var links = data.links;
-var links = [
-    {source: nodes[0], target: nodes[1], left: false, right: true },
-    // {source: nodes[1], target: nodes[2], left: false, right: true }
-  ];
-
 // init D3 force layout
 var force = d3.layout.force()
     .nodes(nodes)
