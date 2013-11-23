@@ -1,4 +1,4 @@
-window.getStepData = ->
+getStepData = ->
   dataset = null
   $.ajax
     url: "/steps.json"
@@ -9,7 +9,7 @@ window.getStepData = ->
       dataset = prepDataForD3(data)
   dataset
 
-window.prepNodesForD3 = (steps) ->
+prepNodesForD3 = (steps) ->
   nodes = []
   $.each steps, (index, step) ->
     nodes.push
@@ -17,7 +17,7 @@ window.prepNodesForD3 = (steps) ->
       reflexive: false
   nodes
 
-window.prepLinksForD3 = (edges, nodes) ->
+prepLinksForD3 = (edges, nodes) ->
   links = []
   $.each edges, (index, edge) ->
     links.push
@@ -31,7 +31,7 @@ window.prepLinksForD3 = (edges, nodes) ->
       right: true
   links
 
-window.prepDataForD3 = (data) ->
+prepDataForD3 = (data) ->
   data.nodes = prepNodesForD3(data.steps)
   data.links = prepLinksForD3(data.edges, data.nodes)
   data
@@ -41,10 +41,14 @@ window.prepDataForD3 = (data) ->
 #  - reflexive edges are indicated on the node (as a bold black circle).
 #  - links are always source < target; edge directions are set by 'left' and 'right'.
 
-window.data = getStepData()
-window.nodes = data.nodes
-window.lastNodeId = 2 # Replace to actually get
-window.links = data.links
+window.getDataForD3 = (cb) ->
+  data  = getStepData()
+  cb({
+    nodes: data.nodes,
+    links: data.links
+    })
 
-window.createNewStep = (id) ->
-
+# window.data = getStepData()
+# window.nodes = data.nodes
+# window.lastNodeId = 2 # Replace to actually get
+# window.links = data.links

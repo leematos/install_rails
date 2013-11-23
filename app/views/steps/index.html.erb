@@ -1,13 +1,20 @@
 <%= content_for :body_class, "directed-graph-editor" %>
 
-<%= content_tag "div", id: "steps", data: {url: steps_url } do %>
-<% end %>
+<%# content_tag "div", id: "steps", data: {url: steps_url } do %>
+<%# end %>
+<div id="directed-graph-steps" data-url="<%= steps_url %>">
+  <button id="save-directed-graph" class="save btn btn-large btn-primary">Save</button>
+  <button id="#save-directed-graph" class="cancel btn btn-large btn-default">Cancel</button>
+
+</div>
+
 
 <h1>Listing steps</h1>
 
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Title</th>
       <th>Permalink</th>
       <th>Content</th>
@@ -20,6 +27,7 @@
   <tbody>
     <% @steps.each do |step| %>
       <tr>
+        <td><%= step.id %></td>
         <td><%= step.title %></td>
         <td><%= step.permalink %></td>
         <td><%= step.content %></td>
@@ -34,5 +42,3 @@
 <br>
 
 <%= link_to 'New Step', new_step_path %>
-
-<%= javascript_include_tag "directed-graph-editor" %>
