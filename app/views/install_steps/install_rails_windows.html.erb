@@ -1,0 +1,42 @@
+<section class="instructions">
+  <h1>Install Rails</h1>
+  <ol>
+    <li>
+      In your terminal type
+    </li>
+    <pre><code>gem install rails --no-ri --no-rdoc</code></pre>
+    <li>
+      To verify your installation, in your terminal type
+    </li>
+      <pre><code>rails --version</code></pre>
+      <p>Approximate expected result</p>
+      <pre><code>Rails 4.0.x</code></pre>
+  </ol>
+  <div class="row">
+      <div class="col-sm-12 note">
+        <h3>Notes:</h3>
+        <ul>
+          <li>This will install Rails and may take a while.</li>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+</section>
+
+
+<section class="prompt center">
+  <%= link_to "Previous Step", previous_wizard_path, class: "option" %>
+  <button type="button" class="troubleshooting" data-toggle="collapse" data-target="#trouble">Troubleshooting</button>
+  <%= link_to "Next Step",     next_wizard_path,     class: "option"%>
+</section>
+
+
+<div id="trouble" class="collapse out note">
+
+  <div class="disqus">
+    <%= render 'layouts/disqus' %>
+  </div>
+
+</div>
+
